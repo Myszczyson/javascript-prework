@@ -1,7 +1,9 @@
-/* Functions */
-function playGame (playerInput){
+
+{
+/* Functions */ 
+const playGame = function (playerInput) {
     clearMessages ()
-    function getMoveName(argMoveId) {
+    const getMoveName = function (argMoveId) {
         if(argMoveId == 1) return 'kamień';
         if(argMoveId == 2) return 'papier';
         if(argMoveId == 3) return 'nożyce';
@@ -23,14 +25,12 @@ function playGame (playerInput){
 
     /* PC */
 
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
-    console.log('Wylosowana liczba to: ' + randomNumber);
-    let computerMove = getMoveName(randomNumber);
+    let randomNumber = Math.floor(Math.random() * 3 + 1),
+    computerMove = getMoveName(randomNumber);
     printMessage('Mój ruch to: ' + computerMove);
 
     /* PLAYER */
-    
-    console.log('Gracz wpisał: ' + playerInput);
+
     let playerMove = getMoveName(playerInput);
     printMessage('Twój ruch to: ' + playerMove);
 
@@ -42,13 +42,13 @@ function playGame (playerInput){
 }
 
 /* BUTTONS */
-function rockClicked(){
+const rockClicked = function () {
     playGame(1);
 }
-function paperClicked(){
+const paperClicked = function () {
     playGame(2);
 }
-function scissorsClicked(){
+const scissorsClicked = function () {
     playGame(3);
 }
 
@@ -60,3 +60,5 @@ playPaper.addEventListener('click', paperClicked);
 
 let playScissors = document.getElementById('playScissors');
 playScissors.addEventListener('click', scissorsClicked);
+
+}
